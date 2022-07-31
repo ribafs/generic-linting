@@ -1,5 +1,7 @@
 # Listagem Genérica em PHP Orientado a Objetos
 
+Lista os registros de uma tabela, com PDO, paginação, busca e bootstrap.
+
 ## Recursos:
 
 - Paginação
@@ -8,7 +10,9 @@
 - PDO
 - Orientação a objetos
 
-## Usando
+## Genérica
+
+Porque genérica? Porque o código se adapta a qualquer tabela, quantidade e nomes de campos. Para isso uso métodos que pegam metadados do banco.
 
 Crie o banco e adicione os registros. Use a tabela que desejar e ele se adapta à sua tabela.
 Apenas configure o banco em classes/Connection.php e também o nome da tabela.
