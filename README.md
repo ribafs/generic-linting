@@ -21,6 +21,10 @@ Apenas configure o banco em classes/Connection.php e também o nome da tabela.
 
 https://github.com/ribafs/generic-listing
 
+## Bônus
+
+Caso chame o index.php sem ter configurado o banco e a tabela o aplicativo avisará que precisa fazer isso antes, por conta do método tableExists()
+
 ## Todo
 
 Falta implementar as demais letras do CRUD: Create, Update.
