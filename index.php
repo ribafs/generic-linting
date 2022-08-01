@@ -5,6 +5,11 @@ include_once("classes/Crud.php");
 $table = Connection::TABLE;
 $crud = new Crud($pdo, $table);
 
+if(!$crud->tableExists($table)){
+    print '<div class="container"><h3>Antes configure o banco de dados e indique a tabela em classes/Connection.php</h3>';
+    exit;
+}
+
 $stmt = $crud->pdo->prepare("SELECT COUNT(*) AS id FROM {$table}");
 $stmt->execute();
 $rows = $stmt->fetch(PDO::FETCH_ASSOC);
