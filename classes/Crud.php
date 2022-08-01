@@ -32,6 +32,28 @@ class Crud
         $meta = $sth->getColumnMeta($x);
         return $meta['name'];
     }
+
+    /**
+     * Check if a table exists in the current database.
+     *
+     * @param string $table Table to search for.
+     * @return bool TRUE if table exists, FALSE if no table found.
+     */
+    function tableExists($table) {
+
+        // Try a select statement against the table
+        // Run it in try-catch in case PDO is in ERRMODE_EXCEPTION.
+        try {
+            $result = $this->pdo->query("SELECT 1 FROM {$table} LIMIT 1");
+        } catch (Exception $e) {
+            // We got an exception (table not found)
+            return FALSE;
+        }
+
+        // Result is either boolean FALSE (no table found) or PDOStatement Object (table found)
+        return $result !== FALSE;
+    }
+    // https://stackoverflow.com/questions/1717495/check-if-a-database-table-exists-using-php-pdo
     
     public function numRows($sql=null){ // Exemplo: $sql = "SELECT * FROM $this->table";
         if(is_null($sql)) {
