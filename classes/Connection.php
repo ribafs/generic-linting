@@ -41,20 +41,3 @@ class Connection {
     }
 
 }
-
-// Testando
-/*
-    $pdo = Connection::getInstance();
-    $stm = $pdo->query("SELECT * FROM clientes order by id");
-    $executa = $stm->execute();
-
-    print "<b>ID</b> - <b>Nome</b> - <b>Email</b><br>";
-    if($executa){
-       while($reg = $stm->fetch()){ // Para recuperar um ARRAY utilize PDO::FETCH_ASSOC 
-         print "$reg->id -  $reg->nome ... $reg->email<br>";
-       }
-    }else{
-       echo 'Erro na consulta dos dados';
-    }
-*/
-?>
